@@ -41,6 +41,7 @@ public class WriteToExcelFile {
                             break;
                         case 1:
                             if (i == 0) {
+                                System.out.print(" ");
                                 cell.setCellValue(234);
                             } else {
                                 cell.setCellValue(456);
