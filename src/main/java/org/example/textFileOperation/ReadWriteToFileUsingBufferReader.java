@@ -4,10 +4,10 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
-
+//Reading and writing text file using bufferReader
 public class ReadWriteToFileUsingBufferReader {
     public static void main(String[] args) {
-        String data = "Hi, Hello, How are you?";
+        String data = "Hi, Hello, How are you? Are you there";
         try{
             // create File Writer
             FileWriter filewriter = new FileWriter("C:/Users/s011271sur/intellij/FirstMavenProject/src/main/resources/sample.txt");
