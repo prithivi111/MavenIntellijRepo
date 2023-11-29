@@ -1,4 +1,4 @@
-package org.example.exceloperation;
+package org.example.excelFileOperation;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -13,7 +13,7 @@ public class WriteToExcelFile {
     public static void main(String[] args) {
         try {
             //Read the excel file
-            File file = new File("C:/Users/s011271sur/intellij/FirstMavenProject/src/main/resources/test.xlsx");
+            File file = new File("C:/Users/s011271sur/intellij/FirstMavenProject/src/main/resources/students.xlsx");
             FileInputStream fileInputStream = new FileInputStream(file);
 
             //Create workbook
