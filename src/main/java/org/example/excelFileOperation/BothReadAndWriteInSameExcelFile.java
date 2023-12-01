@@ -25,7 +25,9 @@ public class BothReadAndWriteInSameExcelFile {
             // getLastRowNum or getLastCellNum gives the indexes of row or column while
             //getPhysicalNumberOfRows() gives the actual rows or columns present.
 
-            System.out.println("The last row number of the employee excel sheet is:: "+ xssfSheet.getLastRowNum());
+            //
+            //
+            // System.out.println("The last row number of the employee excel sheet is:: "+ xssfSheet.getLastRowNum());
 
             Iterator<Row> rowIterator = xssfSheet.rowIterator();
             while(rowIterator.hasNext()){
@@ -52,47 +54,49 @@ public class BothReadAndWriteInSameExcelFile {
                 while(cellIterator.hasNext()){
                          Cell cell = cellIterator.next();
                         System.out.println("Cell Number Details:: " + cell.getColumnIndex());
+                        if (cell.getColumnIndex()>=0 && cell.getColumnIndex()<=4) {
+                             switch (cell.getColumnIndex()) {
 
-                         switch (cell.getColumnIndex()){
-                                case 0:
-                                    emp.setEmployeeID((double) fetchCellData(cell));
+                                 case 0:
+                                     emp.setEmployeeID((double) fetchCellData(cell));
                                     break;
-                                case 1:
+                                 case 1:
                                     emp.setEmployeeName(fetchCellData(cell).toString());
                                     break;
-                                case 2:
+                                 case 2:
                                     emp.setEmployeeAddress(fetchCellData(cell).toString());
                                     break;
-                                case 3:
-                                    emp.setEmployeeEmail(fetchCellData(cell).toString());
-                                    break;
-                                case 4:
-                                    double input = (double)fetchCellData(cell);
+                                 case 3:
+                                     emp.setEmployeeEmail(fetchCellData(cell).toString());
+                                     break;
+                                 case 4:
+                                    double input = (double) fetchCellData(cell);
                                     emp.setEmployeeExperience(input);
                                     double salary = salaryCalculation(input);
 
-
-                                    // Creating a new cell and inserting salary.
-                                    Cell newCell = row.createCell(row.getLastCellNum());
+                                     // Creating a new cell and inserting salary.
+                                    Cell newCell = row.createCell(row.getLastCellNum()+1);
                                     newCell.setCellValue(salary);
                                     break;
+                              }
+                        }
+                }
+                    employee[row.getRowNum()-1] = emp;
 
-                            }
-                    }
 
-                 employee[row.getRowNum()-1] = emp;
+
+
             }
             displayData(employee);
-
             //write back to excel
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             xssfWorkbook.write(fileOutputStream);
             fileOutputStream.close();
             System.out.println("Successfully Save data into excel!!");
 
+
         } catch(Exception e) {
             System.err.println("Error is::" + e.getMessage());
-
 
         }
     }

@@ -17,18 +17,21 @@ public class ReadWriteFromPropertiesFile {
             Properties properties = new Properties();
             properties.load(fileReader);
 
-            String userName = properties.getProperty("username");
-            System.out.println("User Name Details ::" + userName);
-            String password = properties.getProperty("password");
-            System.out.println("Password Details ::" + password);
+            //Reading from the properties file
+            String userName = properties.getProperty("username"); //passing the key here i.e. "username"
+            System.out.println("User Name Details ::" + userName); //getting the value here i.e. "hello"
+            String password = properties.getProperty("password"); //passing the key here
+            System.out.println("Password Details ::" + password); //getting the value here
 
-            //Write to property file
+
+            //Write to property file  //Below we do not need to create the object of property becuase it is already created above.
             FileWriter fileWriter = new FileWriter("C:/Users/s011271sur/intellij/FirstMavenProject/src/main/resources/application.properties");
-            properties.setProperty("database", "mysql");
-            properties.setProperty("url", "test.com");
+            properties.setProperty("database" , "mysql"); //here, database is the key, and mysql is the value.
+            properties.setProperty("url", "test.com"); //here, url is the key, and test.com is the value.
 
             //store the property to file
             properties.store(fileWriter, "Updating: name");
+
 
         } catch(Exception e) {
             System.err.println("Error Details :"+e.getMessage());
