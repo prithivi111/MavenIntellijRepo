@@ -11,16 +11,17 @@ public class ReadingAndWritingInTheTextFileUsingBuffer {
         BufferedWriter bufferedWriter = new BufferedWriter (fileWriter);
         for(String n:names) {
             bufferedWriter.write("\n" + n);
-
         }
         bufferedWriter.close();
 
-        //Reading from the file
+
+            //Reading from the file
         BufferedReader bufferedReader = new BufferedReader(new FileReader("C:/Users/s011271sur/intellij/FirstMavenProject/src/main/resources/input.txt"));
         String line;
         while((line = bufferedReader.readLine()) != null ) {
             System.out.println(line);
         }
         bufferedReader.close();
+
     }
 }

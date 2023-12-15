@@ -30,28 +30,31 @@ public class WriteToPdfFile {
         pdPageContentStream.beginText(); //THis line can be written before setting the font also.
 
         //set the test position
-        pdPageContentStream.newLineAtOffset(20, 700);
+        pdPageContentStream.newLineAtOffset(20, 600);
         pdPageContentStream.setLeading(14.5f);
 
         String text = "First PDF page generation and write back to test.pdf.file....";
         String text1 = "Second PDF line to be printed...";
 
         //for one line
-        pdPageContentStream.showText(text);
-        pdPageContentStream.newLine();
+
+       //  pdPageContentStream.showText(text);
+        // pdPageContentStream.newLine();
+
         //adding one more line
-        pdPageContentStream.showText(text1);
-        pdPageContentStream.newLine();
+
+        // pdPageContentStream.showText(text1);
+        // pdPageContentStream.newLine();
 
 
         // creating one more page
-        pdDocument.addPage(pdPage);
+      //  pdDocument.addPage(pdPage);
 
+       // pdPageContentStream.close();
 
-        pdPageContentStream.close();
 
         // or if you want to write the multiple lines in pdf file
-        /*String[] mulText = new String [6];
+        String[] mulText = new String [6];
         mulText[0] = "First PDF page generation and write back to test.pdf.file....";
         mulText[1] = "Second PDF page generation and write back to test.pdf.file....";
         mulText[2] = "Third PDF page generation and write back to test.pdf.file....";
@@ -63,7 +66,7 @@ public class WriteToPdfFile {
             pdPageContentStream.showText((mulText[i]));
             pdPageContentStream.newLine();
         }
-        pdPageContentStream.close();*/
+        pdPageContentStream.close();
 
 
 

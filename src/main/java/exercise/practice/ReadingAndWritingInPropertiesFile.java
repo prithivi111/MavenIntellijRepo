@@ -16,15 +16,18 @@ public class ReadingAndWritingInPropertiesFile {
 */
         //writing into properties file
 
-        File file = new File("C:/Users/s011271sur/intellij/FirstMavenProject/src/main/resources/application.properties");
-        FileOutputStream fileOutputStream = new FileOutputStream(file);
+   File file = new File("C:/Users/s011271sur/intellij/FirstMavenProject/src/main/resources/application.properties");
+    FileOutputStream fileOutputStream = new FileOutputStream(file);
 
-        Properties properties = new Properties();
+    Properties properties = new Properties();
         properties.setProperty("Ram", "Suraj1234@");
-        properties.setProperty("Hari", "Suraj12345@");
+                properties.setProperty("Hari", "Suraj12345@");
 
-        properties.store(fileOutputStream, "Properties Added");
+                properties.store(fileOutputStream, "Properties Added");
 
-      fileOutputStream.close();
-        }
+                fileOutputStream.close();
+
+    }
+
+
 }

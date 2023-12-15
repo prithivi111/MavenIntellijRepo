@@ -1,0 +1,32 @@
+
+Skeleton of PDF contents
+ ----------------------------
+PDDocument pdDocument = new PDDocument();
+PDPage pdPage = new PDPage();
+pdDocument.addPage(pdPage);
+
+                           
+pdPageContentStream.close();
+pdDocument.save("C:/Users/s011271sur/intellij/FirstMavenProject/src/main/resources/EmployeePDF.pdf");
+pdDocument.close();
+
+
+1. creating an image in the pdf
+------------------------------
+    PDImageXObject image1 = PDImageXObject.createFromFile("C:/Users/s011271sur/Downloads/kirandai.jpg", pdDocument);
+    pdPageContentStream.drawImage(image1, 25, 25, 320, 200);
+
+2. how to create bullet list in the pdf
+-------------------------------------
+	First we have to save the bullet file in the resources.
+	File myBulletFont1 = new File(here we specify the path of the resources);
+	PDFont bulletFont1 = PDTypeofFont.load(pdDocument, myBulletFont1); 
+
+3. how to add external font in the pdf
+-------------------------------------
+
+4. how to add external font in the pdf
+-------------------------------------
+
+5. how to add external font in the pdf
+-------------------------------------

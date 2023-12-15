@@ -1,0 +1,3 @@
+ZORBA100            momo                hot                 10.0                
+ZORBA101            dalbhat             mitho               100.0               
+ZORBA102            achar               amilo               300.0               

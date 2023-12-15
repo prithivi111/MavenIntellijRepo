@@ -24,10 +24,16 @@ public class ReadWriteFromPropertiesFile {
             System.out.println("Password Details ::" + password); //getting the value here
 
 
+
             //Write to property file  //Below we do not need to create the object of property becuase it is already created above.
             FileWriter fileWriter = new FileWriter("C:/Users/s011271sur/intellij/FirstMavenProject/src/main/resources/application.properties");
             properties.setProperty("database" , "mysql"); //here, database is the key, and mysql is the value.
             properties.setProperty("url", "test.com"); //here, url is the key, and test.com is the value.
+
+            //Modify the existing property
+            properties.setProperty("url", "facebook.com");
+            String aa = properties.getProperty("url");
+            System.out.println(aa);
 
             //store the property to file
             properties.store(fileWriter, "Updating: name");
